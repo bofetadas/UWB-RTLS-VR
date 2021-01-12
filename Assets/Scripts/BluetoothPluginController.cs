@@ -33,8 +33,8 @@ public class BluetoothPluginController : MonoBehaviour
             activityContext = activityClass.GetStatic<AndroidJavaObject>("currentActivity");
         }
 
-        // Initialize BluetoothServer with activityContext and start plugin
-        using(bluetoothService = new AndroidJavaObject("de.MaxBauer.UWBRTLS.BluetoothService")) {
+        // Initialize BluetoothService with activityContext and start plugin
+        using(bluetoothService = new AndroidJavaObject("de.MaxBauer.UWBRTLSVR.BluetoothService")) {
             bluetoothService.Call("setContext", activityContext);
             bluetoothService.Call("connectToTag");
         }
